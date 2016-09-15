@@ -1,22 +1,20 @@
 # Pre-work - *Quang's Blog*
 
-**Name of your app** is a Ruby on Rails blog application.
+**Quang's Blog** is a Ruby on Rails blog application.
 
-Submitted by: **Your Name Here**
+Submitted by: **Tran Duc Quang**
 
-Time spent: **X** hours spent in total
+Time spent: **2** hours spent in total
 
-URL: **Insert your Heroku URL here**
+URL: **quang-s-blog.herokuapp.com**
 
 ## User Stories
 
 The following **required** functionality is complete:
 
-> HINT: mark the items you completed with [x]
-
-* [ ] User can create a new post, formatted using the Markdown language.
-* [ ] User can edit an existing post.
-* [ ] There is one post that introduces the App Creator with name, picture.
+* [x] User can create a new post, formatted using the Markdown language.
+* [x] User can edit an existing post.
+* [x] There is one post that introduces the App Creator with name, picture.
 * [ ] User can delete stories, with an alert that asks the user to confirm.
 * [ ] User see a search form on the Posts page.
 * [ ] User can submit a search term to find all posts bywith titles containing the search term.
@@ -51,7 +49,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [QuangTD]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
