@@ -48,4 +48,5 @@ group :development do
 end
 
 gem 'bootstrap', '~> 4.0.0.alpha4'
+gem "font-awesome-rails"
 gem 'redcarpet'
