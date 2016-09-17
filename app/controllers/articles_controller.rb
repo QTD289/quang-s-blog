@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @article.view_count += 1
+    @article.save
   end
 
   # GET /articles/new
@@ -62,7 +64,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def search
+    @articles = Article.where("title ILIKE ?", "%#{params[:search]}%")
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+  end
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
