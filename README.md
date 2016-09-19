@@ -4,7 +4,7 @@
 
 Submitted by: **Tran Duc Quang**
 
-Time spent: **6** hours spent in total
+Time spent: **10** hours spent in total
 
 URL: [quang-s-blog.herokuapp.com](quang-s-blog.herokuapp.com)
 
