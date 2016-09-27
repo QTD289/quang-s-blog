@@ -4,7 +4,7 @@
 
 Submitted by: **Tran Duc Quang**
 
-Time spent: **10** hours spent in total
+Time spent: **15** hours spent in total
 
 URL: [quang-s-blog.herokuapp.com](quang-s-blog.herokuapp.com)
 
@@ -28,6 +28,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Responsive UI.
+- [x] Sign up / Sign in
 
 ## Video Walkthrough
 
