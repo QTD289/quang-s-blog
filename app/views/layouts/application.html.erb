@@ -9,14 +9,29 @@
 </head>
 <body>
 <%= render 'shared/head' %>
-<div class="container" style="margin-top: 60px">
+<div class="page-wrap container" style="margin-top: 60px">
   <%= yield %>
 </div>
-
+<%= render 'shared/footer' %>
 </body>
 <style type="text/css">
   #notice {
     color: green;
+  }
+  html, body {
+    height: 100%;
+  }
+  .page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -50px;
+  }
+  .page-wrap:after {
+    content: "";
+    display: block;
+  }
+  .foot, .page-wrap:after {
+    height: 50px;
   }
 </style>
 </html>
