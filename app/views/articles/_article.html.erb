@@ -10,10 +10,11 @@
         <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning' %>
         <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         <div style="float: right">
+          Comments: <%= article.comments.count %> |
           <i class="fa fa-eye" aria-hidden="true"></i> <%= article.view_count %>
         </div>
       </div>
     </div>
+    <hr>
   </div>
 </div>
-<hr>

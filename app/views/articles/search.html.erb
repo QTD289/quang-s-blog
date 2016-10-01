@@ -1,5 +1,5 @@
-<h1>Quang's Blog</h1>
-<h3>My first Rails Application for CoderSchool!</h3>
+<h1 style="margin-top: 100px">Search for: <i><%= params[:search] %></i></h1>
+
 <%= render @articles %>
 <br>
 <%= link_to 'New Article', new_article_path, class: 'btn btn-success' %>
