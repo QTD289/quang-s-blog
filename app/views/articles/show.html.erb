@@ -2,7 +2,7 @@
 <p class="alert"><%= alert %></p>
 
 <%= link_to 'Back', articles_path, class: 'btn btn-success' %>
-<div class="row">
+<div class="row" style="margin-top: 10px">
   <div class="col-md-12">
     <div class="card">
       <div class="card-block">
@@ -29,9 +29,10 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="card-footer">
+    <h4>Comments:</h4>
+    <div class="card card-footer">
       <% @comments.each do |comment| %>
-        <p><%= comment.user.email %>: <%= comment.content %></p>
+        <p><b><%= comment.user.email %></b>: <%= comment.content %></p>
         <hr>
       <% end %>
       <%= form_for([@article, @article.comments.build]) do |f| %>
@@ -41,7 +42,7 @@
         <div class="form-group">
           <div class="row">
             <div class="col-sm-3">
-              <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Comment">
+              <input type="submit" class="form-control btn btn-success" value="Comment">
             </div>
           </div>
         </div>
