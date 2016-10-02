@@ -7,11 +7,14 @@
         <%= link_to 'read more', article %>
       </div>
       <div class="card-footer">
-        <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning' %>
-        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <% if current_user && current_user.id == article.user_id %>
+          <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning' %>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <% end %>
         <div style="float: right">
-          Comments: <%= article.comments.count %> |
+          <i class="fa fa-comments" aria-hidden="true"></i> <%= article.comments.count %> |
           <i class="fa fa-eye" aria-hidden="true"></i> <%= article.view_count %>
+          <br><i><%= time_ago_in_words(article.created_at) %> ago</i>
         </div>
       </div>
     </div>

@@ -1,0 +1,32 @@
+<div style="margin-top: 80px">
+  <%= link_to 'Back', articles_path, class: 'btn btn-success' %>
+</div>
+<div class="row" style="margin-top: 10px">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title"><%= @user.email %></h4>
+        <h6 class="card-subtitle text-muted">Registered: <%= time_ago_in_words(@user.created_at) %> ago</h6>
+      </div>
+      <hr>
+      <div class="card-block">
+        <h5 class="card-title">Articles:</h5>
+        <% @user.articles.each do |article| %>
+          <p><%= link_to article.title, article_path(article) %></p>
+        <% end %>
+      </div>
+      <hr>
+      <div class="card-block">
+        <h5 class="card-title">Comments:</h5>
+        <% @user.comments.each do |comment| %>
+          <p><%= comment.content %> <i>-</i> <%= link_to comment.article.title, article_path(comment.article) %></p>
+        <% end %>
+      </div>
+      <% if current_user.id == @user.id %>
+        <div class="card-footer">
+          <%= link_to 'Update profile', edit_user_registration_path, class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

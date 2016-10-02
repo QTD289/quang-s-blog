@@ -7,7 +7,7 @@
     <div class="card">
       <div class="card-block">
         <h4 class="card-title"><%= @article.title %></h4>
-        <h6 class="card-subtitle text-muted">Author: <%= @article.user.email %></h6>
+        <h6 class="card-subtitle text-muted">Author: <%= link_to @article.user.email, user_path(@article.user) %>, Created <%= time_ago_in_words(@article.created_at) %> ago</h6>
       </div>
       <hr id="article-show">
       <div class="card-block">
@@ -19,7 +19,7 @@
           <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         <% end %>
         <div style="float: right">
-          Comments: <%= @article.comments.count %> |
+          <i class="fa fa-comments" aria-hidden="true"></i> <%= @article.comments.count %> |
           <i class="fa fa-eye" aria-hidden="true"></i> <%= @article.view_count %>
         </div>
       </div>
@@ -31,13 +31,9 @@
   <div class="col-md-12">
     <h4>Comments:</h4>
     <div class="card card-footer">
-      <% @comments.each do |comment| %>
-        <p><b><%= comment.user.email %></b>: <%= comment.content %></p>
-        <hr>
-      <% end %>
       <%= form_for([@article, @article.comments.build]) do |f| %>
         <div class="form-group">
-          <%= f.text_field :content, class: 'form-control', placeholder: 'Leave a comment...' %>
+          <%= f.text_field :content, class: 'form-control', placeholder: 'Leave a comment...', required: true %>
         </div>
         <div class="form-group">
           <div class="row">
@@ -46,6 +42,12 @@
             </div>
           </div>
         </div>
+      <% end %>
+      <% @comments.reverse.each do |comment| %>
+        <% if comment.valid? %>
+          <hr>
+          <p><b><%= link_to comment.user.email, user_path(comment.user) %></b>: <%= comment.content %></p>
+        <% end %>
       <% end %>
     </div>
   </div>

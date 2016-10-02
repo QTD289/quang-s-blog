@@ -11,7 +11,10 @@
           </li>
           <% if user_signed_in? %>
             <li class="nav-item">
-              <a class="nav-link" style="font-weight: bold;color: white"><%= current_user.email %></a>
+              <a class="nav-link" href=<%= new_article_path %>  style="font-weight: bold;color: white">New Article</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= user_path(current_user.id) %> style="font-weight: bold;color: white"><%= current_user.email %></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/users/sign_out" data-method="delete">Log Out</a>
