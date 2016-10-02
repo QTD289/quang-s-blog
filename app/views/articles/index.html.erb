@@ -2,9 +2,12 @@
 <p class="alert"><%= alert %></p>
 <div class="col-md-12">
   <div class="card">
-    <div class="card-header">
+    <div class="card-header" style="text-align: center">
       <h1 class="card-title">Quang's Blog</h1>
       <h4 class="card-subtitle text-muted">My first Rails Application for CoderSchool!</h4>
+      <br>
+      <h6 class="card-subtitle">Log in / Register to post new article and leave comment.</h6>
+      <a class="btn btn-success" href=<%= new_user_session_path %> style="margin-top: 10px">Log in / Register</a>
     </div>
   </div>
   <%= render @articles.reverse %>
