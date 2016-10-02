@@ -12,6 +12,7 @@
       <% end %>
     </div>
   </div>
-  <%= render @articles.order(created_at: :desc) %>
+  <%= render @articles %>
   <br>
+  <%= paginate @articles %>
 </div>

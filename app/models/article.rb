@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  paginates_per 10
   has_many :comments, dependent: :destroy
   belongs_to :user
   has_many :taggings

@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = params[:tag] ? Article.tagged_with(params[:tag]) : Article.all
+    @articles = params[:tag] ? Article.tagged_with(params[:tag]).order(created_at: :desc).page(params[:page]) : Article.order(created_at: :desc).page(params[:page])
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 
