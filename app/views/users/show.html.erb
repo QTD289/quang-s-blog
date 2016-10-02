@@ -22,7 +22,7 @@
           <p><%= comment.content %> <i>-</i> <%= link_to comment.article.title, article_path(comment.article) %></p>
         <% end %>
       </div>
-      <% if current_user.id == @user.id %>
+      <% if current_user && current_user.id == @user.id %>
         <div class="card-footer">
           <%= link_to 'Update profile', edit_user_registration_path, class: 'btn btn-primary' %>
         </div>
