@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create]
   end
+  get 'tags/:tag', to: 'articles#index', as: 'tag'
 
   post 'articles_search' => 'articles#search'
   # The priority is based upon order of creation: first created -> highest priority.
