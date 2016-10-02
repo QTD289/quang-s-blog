@@ -5,9 +5,11 @@
     <div class="card-header" style="text-align: center">
       <h1 class="card-title">Quang's Blog</h1>
       <h4 class="card-subtitle text-muted">My first Rails Application for CoderSchool!</h4>
-      <br>
-      <h6 class="card-subtitle">Log in / Register to post new article and leave comment.</h6>
-      <a class="btn btn-success" href=<%= new_user_session_path %> style="margin-top: 10px">Log in / Register</a>
+      <% unless user_signed_in? %>
+        <br>
+        <h6 class="card-subtitle">Log in / Register to post new article and leave comment.</h6>
+        <a class="btn btn-success" href=<%= new_user_session_path %> style="margin-top: 10px">Log in / Register</a>
+      <% end %>
     </div>
   </div>
   <%= render @articles.order(created_at: :desc) %>

@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :Tags %><br>
-    <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
+    <%= f.text_field :all_tags, class: 'form-control', placeholder: "Tags separated with comma" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions" style="margin-top: 10px; margin-bottom: 10px">
+    <%= f.submit action, class: 'btn btn-primary' %>
   </div>
 <% end %>
